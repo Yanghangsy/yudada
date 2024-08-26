@@ -10,57 +10,67 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 用户
- * @TableName user
+ * 用户答题记录
+ * @TableName user_answer
  */
-@TableName(value ="user")
+@TableName(value ="user_answer")
 @Data
-public class User implements Serializable {
+public class UserAnswer implements Serializable {
     /**
-     * id
+     * 
      */
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
-     * 账号
+     * 应用 id
      */
-    private String userAccount;
+    private Long appId;
 
     /**
-     * 密码
+     * 应用类型（0-得分类，1-角色测评类）
      */
-    private String userPassword;
+    private Integer appType;
 
     /**
-     * 微信开放平台id
+     * 评分策略（0-自定义，1-AI）
      */
-    private String unionId;
+    private Integer scoringStrategy;
 
     /**
-     * 公众号openId
+     * 用户答案（JSON 数组）
      */
-    private String mpOpenId;
+    private String choices;
 
     /**
-     * 用户昵称
+     * 评分结果 id
      */
-    private String userName;
+    private Long resultId;
 
     /**
-     * 用户头像
+     * 结果名称，如物流师
      */
-    private String userAvatar;
+    private String resultName;
 
     /**
-     * 用户简介
+     * 结果描述
      */
-    private String userProfile;
+    private String resultDesc;
 
     /**
-     * 用户角色：user/admin/ban
+     * 结果图标
      */
-    private String userRole;
+    private String resultPicture;
+
+    /**
+     * 得分
+     */
+    private Integer resultScore;
+
+    /**
+     * 用户 id
+     */
+    private Long userId;
 
     /**
      * 创建时间
