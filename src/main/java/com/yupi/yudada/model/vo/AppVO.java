@@ -124,8 +124,6 @@ public class AppVO implements Serializable {
         }
         App app = new App();
         BeanUtils.copyProperties(appVO, app);
-        List<String> tagList = appVO.getTagList();
-        app.setTags(JSONUtil.toJsonStr(tagList));
         return app;
     }
 
@@ -141,7 +139,6 @@ public class AppVO implements Serializable {
         }
         AppVO appVO = new AppVO();
         BeanUtils.copyProperties(app, appVO);
-        appVO.setTagList(JSONUtil.toList(app.getTags(), String.class));
         return appVO;
     }
 }

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * 审核状态枚举
  */
-public enum ApptypeEnum {
+public enum AppTypeEnum {
     SCORE("得分类",0),
 
     TEST("测评类",1);
@@ -17,7 +17,7 @@ public enum ApptypeEnum {
     private final String text;
     private final int value;
 
-    ApptypeEnum(String text, int value) {
+    AppTypeEnum(String text, int value) {
         this.text = text;
         this.value = value;
     }
@@ -29,11 +29,11 @@ public enum ApptypeEnum {
      * @param value
      * @return
      */
-    public static ApptypeEnum getReviewStatusEnum(Integer value) {
+    public static AppTypeEnum getReviewStatusEnum(Integer value) {
         if (ObjectUtils.isEmpty(value)) {
             return null;
         }
-        for (ApptypeEnum apptypeEnum : ApptypeEnum.values()) {
+        for (AppTypeEnum apptypeEnum : AppTypeEnum.values()) {
             if (apptypeEnum.value == value) {
                 return apptypeEnum;
             }
